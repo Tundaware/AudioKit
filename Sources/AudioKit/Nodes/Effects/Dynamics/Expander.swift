@@ -16,6 +16,7 @@ public class Expander: Node {
 
     /// Underlying AVAudioNode
     public var avAudioNode: AVAudioNode { effectAU }
+  
 
     /// Specification details for expansionRatio
     public static let expansionRatioDef = NodeParameterDef(
@@ -69,7 +70,7 @@ public class Expander: Node {
     public static let masterGainDef = NodeParameterDef(
         identifier: "masterGain",
         name: "Master Gain",
-        address: AUParameterAddress(kDynamicsProcessorParam_MasterGain),
+        address: AUParameterAddress(kDynamicsProcessorParam_MasterGain_Wrapper.value),
         defaultValue: 0,
         range: -40 ... 40,
         unit: .decibels)

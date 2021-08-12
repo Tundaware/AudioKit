@@ -6,7 +6,6 @@ import AVFoundation
 /// AudioKit version of Apple's DynamicsProcessor Audio Unit
 ///
 public class DynamicsProcessor: Node {
-
     fileprivate let effectAU = AVAudioUnitEffect(appleEffect: kAudioUnitSubType_DynamicsProcessor)
 
     let input: Node
@@ -93,7 +92,7 @@ public class DynamicsProcessor: Node {
     public static let masterGainDef = NodeParameterDef(
         identifier: "masterGain",
         name: "Master Gain",
-        address: AUParameterAddress(kDynamicsProcessorParam_MasterGain),
+        address: AUParameterAddress(kDynamicsProcessorParam_MasterGain_Wrapper.value),
         defaultValue: 0,
         range: -40 ... 40,
         unit: .decibels)
